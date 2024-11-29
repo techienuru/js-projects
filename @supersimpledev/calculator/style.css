@@ -1,0 +1,54 @@
+body {
+  background-color: black;
+}
+.container {
+  min-height: 100vh;
+}
+.container > .card {
+  background-color: springgreen;
+}
+.card-body {
+  width: fit-content;
+}
+.card-body > .row > .col {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+  box-shadow: 0px 0px 5px rgb(208, 255, 0);
+}
+
+.card-body > .row:first-child > .col {
+  border-radius: 0%;
+  background-color: transparent;
+  border: 1.2px solid white;
+  width: 100;
+  height: 30px;
+  color: white;
+}
+
+.card-body > .button-grid > .col {
+  border: none;
+  box-shadow: none;
+}
+.card-body > .button-grid > .col:last-child {
+  background-color: rgb(11, 166, 212);
+}
+
+.js-clear-button {
+  /* background-color: rgb(170, 207, 34); */
+  color: white;
+  border-radius: 50%;
+  padding: 20px;
+}
+
+@media all and (width <= 294px) {
+  .card-body > .row > .col {
+    padding: 15px;
+  }
+}
+@media all and (width <= 254px) {
+  .card-body > .row > .col {
+    padding: 12px;
+  }
+}

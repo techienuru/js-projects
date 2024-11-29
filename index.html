@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techienuru - JavaScript Project Collection</title>
+    <link rel="stylesheet" href="./Helpers/Bootstrap/bootstrap.css" />
+    <style>
+      body > .container {
+        height: 100vh;
+      }
+      .container > .card {
+        box-shadow: 0px 0px 3px rgb(175, 170, 170);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center">
+            Welcome to <span class="text-info">Techienuru</span> JavaScript
+            Projects Collection!
+          </h3>
+          <p class="text-center">
+            Explore a list of all the projects i have developed so far in JS.
+            Click on anyone to view it
+          </p>
+          <ul class="js-projects">
+            <!-- Projects will dynamically show here from JS -->
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="./Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+      const projects = [
+        {
+          name: "Amazon Clone",
+          link: "./@supersimpledev/amazon-clone/index.html",
+        },
+        {
+          name: "Calculator",
+          link: "./@supersimpledev/calculator/index.html",
+        },
+        {
+          name: "Rock Paper Scissors Game",
+          link: "./@supersimpledev/rock-paper-scissors/index.html",
+        },
+        {
+          name: "Stopwatch",
+          link: "./@supersimpledev/stopwatch/index.html",
+        },
+        {
+          name: "Tic Tac Toe Game",
+          link: "./@supersimpledev/tic-tac-toe/index.html",
+        },
+        {
+          name: "Todo List",
+          link: "./@supersimpledev/todo-list/index.html",
+        },
+      ];
+
+      function loadProjects() {
+        const projectUlElement = document.querySelector(".js-projects");
+
+        projects.forEach((project) => {
+          const listItem = document.createElement("li"); // creating li tag
+          const link = document.createElement("a"); // creating a tag
+
+          link.href = project.link; // putting the project link into a tag's href
+          link.textContent = project.name; // putting the project name into a tag
+          listItem.appendChild(link); // putting a tag into li tag
+          projectUlElement.appendChild(listItem); // putting li tag into the page's ul tag
+        });
+      }
+      window.onload = loadProjects(); //displaying projects as the window loads
+    </script>
+  </body>
+</html>

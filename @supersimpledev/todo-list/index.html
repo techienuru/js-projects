@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List - Techienuru Projects</title>
+    <link rel="stylesheet" href="../../Helpers/Bootstrap/bootstrap.css" />
+    <style>
+      .form-control {
+        border-radius: 0px;
+      }
+      .form-control:focus {
+        box-shadow: 0px 0px 5px rgb(97, 175, 97);
+        outline: none;
+        border: 2px solid rgb(97, 175, 97);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5 px-5">
+      <h3>Todo List</h3>
+      <div class="form">
+        <div class="row gap-3">
+          <div class="col-sm">
+            <input
+              type="text"
+              placeholder="Todo Name"
+              class="form-control js-todo-name"
+              autofocus
+            />
+          </div>
+          <div class="col-sm">
+            <input type="datetime-local" class="form-control js-todo-date" />
+          </div>
+          <button type="button" class="btn btn-success my-3 js-add-btn">
+            Add
+          </button>
+        </div>
+      </div>
+      <div class="js-todos-wrapper">
+        <!-- to-do appear here dynamically from JS -->
+      </div>
+    </div>
+    <script src="../../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

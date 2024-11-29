@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator - Techienuru Projects</title>
+    <link rel="stylesheet" href="../../Helpers/Bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center">
+      <div class="card">
+        <div class="card-body p-4 p-sm-5 bg-info">
+          <div class="row mb-3">
+            <div class="col ps-2 pe-1 py-0 js-answer-box">
+              <!-- Answer to calculation dynamically appear here -->
+            </div>
+          </div>
+          <div class="row mb-3 gap-3 button-grid">
+            <button class="col js-button">1</button>
+            <button class="col js-button">2</button>
+            <button class="col js-button">3</button>
+            <button class="col js-arithmetic-button">+</button>
+          </div>
+          <div class="row mb-3 gap-3 button-grid">
+            <button class="col js-button">4</button>
+            <button class="col js-button">5</button>
+            <button class="col js-button">6</button>
+            <button class="col js-arithmetic-button">-</button>
+          </div>
+          <div class="row mb-3 gap-3 button-grid">
+            <button class="col js-button">7</button>
+            <button class="col js-button">8</button>
+            <button class="col js-button">9</button>
+            <button class="col js-arithmetic-button">*</button>
+          </div>
+          <div class="row mb-3 gap-3 button-grid">
+            <button class="col js-button">0</button>
+            <button class="col js-button">.</button>
+            <button class="col js-equal-to">=</button>
+            <button class="col js-arithmetic-button">/</button>
+          </div>
+          <div class="row mb-3 gap-3 button-grid">
+            <div class="col-3 p-0">
+              <button class="btn btn-outline-success js-clear-button">AC</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
