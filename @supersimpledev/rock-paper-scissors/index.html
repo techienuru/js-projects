@@ -15,8 +15,8 @@
           <thead>
             <tr>
               <th>S/N</th>
-              <th>Your Pick</th>
-              <th>Computer's Pick</th>
+              <th>First Pick</th>
+              <th>Second Pick</th>
               <th class="text-info">Result (Who win)</th>
             </tr>
           </thead>
@@ -39,6 +39,12 @@
               <td>Scissors</td>
               <td class="text-info">Scissors win</td>
             </tr>
+            <tr>
+              <td colspan="4">
+                <span class="text-bold">NB: </span>You can also use keyboard to
+                play the game (R => Rock, P => Paper, S => Scissors)
+              </td>
+            </tr>
           </tbody>
         </div>
       </table>
@@ -46,45 +52,39 @@
     <div class="container text-white p-5">
       <h2 class="text-">Rock Paper Scissors Game</h2>
       <div class="row mb-5 gap-3">
-        <button type="button" class="btn col" title="Rock">
+        <button type="button" class="btn col js-rock-btn" title="Rock">
           <img src="./images/rock-emoji.png" alt="" class="img-fluid" />
         </button>
-        <button type="button" class="btn col" title="Paper">
+        <button type="button" class="btn col js-paper-btn" title="Paper">
           <img src="./images/paper-emoji.png" alt="" class="img-fluid" />
         </button>
-        <button type="button" class="btn col" title="Scissors">
+        <button type="button" class="btn col js-scissors-btn" title="Scissors">
           <img src="./images/scissors-emoji.png" alt="" class="img-fluid" />
         </button>
       </div>
-      <div class="result">
-        <p class="lead">You win</p>
-        <p class="lead">
-          You picked
-          <img
-            src="./images/paper-emoji.png"
-            alt="Your pick"
-            width="60"
-            height="60"
-          />. Computer picked
-          <img
-            src="./images/scissors-emoji.png"
-            alt="Computer's pick"
-            width="60"
-            height="60"
-          />.
-        </p>
-        <p class="lead">Wins: 1, Losses: 0, Ties: 3</p>
+      <div class="result js-result-wrapper">
+        <!-- Result dynamically appear here from JS -->
       </div>
       <div class="row">
         <div class="p-0 col-12 col-sm-8 col-lg-4 mx-auto">
           <div class="d-flex justify-content-between btn-wrapper">
-            <button type="button" class="p-2 btn btn-outline-danger reset-scores">Reset Scores</button>
-            <button type="button" class="p-2 btn btn-outline-success auto-play">Auto Play</button>
+            <button
+              type="button"
+              class="p-2 btn btn-outline-danger js-reset-scores"
+            >
+              Reset Scores
+            </button>
+            <button
+              type="button"
+              class="p-2 btn btn-outline-success js-auto-play"
+            >
+              Auto Play
+            </button>
           </div>
         </div>
       </div>
     </div>
     <script src="../../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
