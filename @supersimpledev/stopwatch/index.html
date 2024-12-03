@@ -4,9 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Stopwatch - Techienuru Projects</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../Helpers/Bootstrap/bootstrap.css" />
+    <style>
+      body {
+        background-color: #2e2e3a;
+        color: #e0e1dd;
+      }
+      .card {
+        background-color: #00a896;
+      }
+    </style>
   </head>
   <body>
-    <script src="./index.js"></script>
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-12 col-sm-10 col-md-6 mx-auto">
+          <div class="card py-5">
+            <div class="card-body">
+              <p class="text-center fs-1 js-timer-wrapper">
+                <!-- Timer displays and count up dynamically from JS -->
+              </p>
+              <div
+                class="d-flex gap-2 gap-sm-3 justify-content-center flex-wrap"
+              >
+                <button
+                  class="btn btn-outline-success text-white rounded-0 js-start-btn"
+                  title="start timer"
+                >
+                  START
+                </button>
+                <button
+                  class="btn btn-outline-warning rounded-0 js-stop-btn"
+                  title="pause timer"
+                >
+                  STOP
+                </button>
+                <button
+                  class="btn btn-outline-danger text-white rounded-0 js-reset-btn"
+                  title="reset timer"
+                >
+                  RESET
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./index.js"></script>
   </body>
 </html>
