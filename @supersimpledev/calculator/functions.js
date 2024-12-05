@@ -2,12 +2,13 @@ export function displayCalculation(calculation) {
   document.querySelector(".js-answer-box").innerText = calculation;
 }
 
-export function storeAnswer($name, $value) {
-  localStorage.setItem($name, $value);
+export function storeAnswer(calculation) {
+  localStorage.setItem("calculation", calculation);
 }
 
 export function resetCalculation(calculation) {
-  calculation = "";
-  storeAnswer("calculation", calculation);
+  calculation = ""; // reset the local calculation variable
+  storeAnswer(calculation);
   displayCalculation(calculation);
+  return calculation;
 }

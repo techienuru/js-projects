@@ -33,11 +33,11 @@ document.querySelector(".js-equal-to").addEventListener("click", () => {
   if (calculation) {
     calculation = `${eval(calculation)}`;
     displayCalculation(calculation);
-    storeAnswer("calculation", calculation);
+    storeAnswer(calculation);
   }
 });
 
-// Clearing calculations
+// Handle AC btn click
 document.querySelector(".js-clear-button").addEventListener("click", () => {
-  resetCalculation(calculation);
+  calculation = resetCalculation(calculation); // reset the local calclation variable passed & update the global variable
 });
