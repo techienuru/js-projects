@@ -20,13 +20,13 @@ document.querySelector(".js-scissors-btn").addEventListener("click", () => {
 // Reset scores onclick Listener
 const resetscoresBtn = document.querySelector(".js-reset-scores");
 resetscoresBtn.addEventListener("click", () => {
-  resetscoresBtn.innerText = "...";
+  resetscoresBtn.innerText = "Processing...";
   setTimeout(() => {
     resetScores();
     resultWrapperElement.innerHTML = `
     <div class="alert alert-success alert-dismissible">
         Scores reset successfully!
-        <button class="btn float-end" data-bs-dismiss="alert">&times;</button>
+        <button class="btn btn-close" data-bs-dismiss="alert"></button>
       </div>
     `;
     resetscoresBtn.innerText = "Reset Scores";

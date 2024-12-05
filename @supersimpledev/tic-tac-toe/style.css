@@ -22,7 +22,10 @@ body {
   cursor: pointer;
 }
 .taken {
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+}
+.highlight {
+  border: 2px solid #f34213;
 }
 
 @media all and (width <= 258px) {
