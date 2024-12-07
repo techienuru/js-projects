@@ -104,3 +104,54 @@ export function resetScores() {
   saveScores();
   renderScores();
 }
+
+function pickComputerIndex() {
+  let computerIndex = Math.random();
+
+  if (computerIndex >= 0 && computerIndex <= 1 / 9) {
+    computerIndex = 0;
+  } else if (computerIndex > 1 / 9 && computerIndex <= 2 / 9) {
+    computerIndex = 1;
+  } else if (computerIndex > 2 / 9 && computerIndex <= 3 / 9) {
+    computerIndex = 2;
+  } else if (computerIndex > 3 / 9 && computerIndex <= 4 / 9) {
+    computerIndex = 3;
+  } else if (computerIndex > 4 / 9 && computerIndex <= 5 / 9) {
+    computerIndex = 4;
+  } else if (computerIndex > 5 / 9 && computerIndex <= 6 / 9) {
+    computerIndex = 5;
+  } else if (computerIndex > 6 / 9 && computerIndex <= 7 / 9) {
+    computerIndex = 6;
+  } else if (computerIndex > 7 / 9 && computerIndex <= 8 / 9) {
+    computerIndex = 7;
+  } else if (computerIndex > 8 / 9 && computerIndex <= 9 / 9) {
+    computerIndex = 8;
+  }
+  return computerIndex;
+}
+
+export function makeComputerPlay(cells) {
+  let computerIndex = pickComputerIndex(); // Pick a no at random (From 0-8)
+
+  let cellPicked; // Stores The cell Computer Picked
+  // Chks & give go ahead that the cell is empty & game active
+  let goodToGo = false;
+  while (!goodToGo) {
+    // If the cell has not been taken and Game is active
+    if (
+      gameVariables.gameState[computerIndex] == "" &&
+      gameVariables.isGameActive
+    ) {
+      // Determinig the cell that matches the index
+      cells.forEach((cell) => {
+        if (cell.dataset.index == computerIndex) {
+          cellPicked = cell;
+        }
+      });
+      goodToGo = true;
+    } else {
+      computerIndex = pickComputerIndex();
+    }
+  }
+  playGame(computerIndex, cellPicked);
+}
