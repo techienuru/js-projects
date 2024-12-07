@@ -12,10 +12,10 @@ import {
 cells.forEach((cell) => {
   cell.addEventListener("click", () => {
     playGame(cell.dataset.index, cell);
-    // If there is still empty cell, allow Computer to pick a cell
-    if (gameVariables.gameState.includes("")) {
-      makeComputerPlay(cells);
-    }
+    // If there is still empty cell & game is active, allow Computer to pick a cell
+    // if (gameVariables.gameState.includes("") && gameVariables.isGameActive) {
+    //   makeComputerPlay(cells);
+    // }
   });
 });
 

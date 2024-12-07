@@ -93,12 +93,11 @@ function saveScores() {
 }
 
 export function renderScores() {
-  displayers.scoreBoard.innerText = `Wins: ${gameVariables.scores.wins}, Losses: ${gameVariables.scores.losses}, Tie: ${gameVariables.scores.ties}`;
+  displayers.scoreBoard.innerText = `Wins: ${gameVariables.scores.wins}, Tie: ${gameVariables.scores.ties}`;
 }
 export function resetScores() {
   gameVariables.scores = {
     wins: 0,
-    losses: 0,
     ties: 0,
   };
   saveScores();
@@ -106,35 +105,20 @@ export function resetScores() {
 }
 
 function pickComputerIndex() {
-  let computerIndex = Math.random();
-
-  if (computerIndex >= 0 && computerIndex <= 1 / 9) {
-    computerIndex = 0;
-  } else if (computerIndex > 1 / 9 && computerIndex <= 2 / 9) {
-    computerIndex = 1;
-  } else if (computerIndex > 2 / 9 && computerIndex <= 3 / 9) {
-    computerIndex = 2;
-  } else if (computerIndex > 3 / 9 && computerIndex <= 4 / 9) {
-    computerIndex = 3;
-  } else if (computerIndex > 4 / 9 && computerIndex <= 5 / 9) {
-    computerIndex = 4;
-  } else if (computerIndex > 5 / 9 && computerIndex <= 6 / 9) {
-    computerIndex = 5;
-  } else if (computerIndex > 6 / 9 && computerIndex <= 7 / 9) {
-    computerIndex = 6;
-  } else if (computerIndex > 7 / 9 && computerIndex <= 8 / 9) {
-    computerIndex = 7;
-  } else if (computerIndex > 8 / 9 && computerIndex <= 9 / 9) {
-    computerIndex = 8;
-  }
-  return computerIndex;
+  return Math.floor(Math.random() * 9); // Generates a random nunmber between 0-8
 }
 
 export function makeComputerPlay(cells) {
+  // Stop computer from playing if the game is inactive or all cells are taken
+  if (!gameVariables.gameState.includes("") || !gameVariables.isGameActive) {
+    return;
+  }
+
   let computerIndex = pickComputerIndex(); // Pick a no at random (From 0-8)
 
-  let cellPicked; // Stores The cell Computer Picked
-  // Chks & give go ahead that the cell is empty & game active
+  let cellPicked; // To hold The cell Computer Pick
+
+  // Chks for cell that is not taken & give go ahead
   let goodToGo = false;
   while (!goodToGo) {
     // If the cell has not been taken and Game is active
@@ -143,12 +127,14 @@ export function makeComputerPlay(cells) {
       gameVariables.isGameActive
     ) {
       // Determinig the cell that matches the index
-      cells.forEach((cell) => {
+      for (let i = 0; i < cells.length; i++) {
+        const cell = cells[i];
         if (cell.dataset.index == computerIndex) {
           cellPicked = cell;
+          break; // Exit the loop if a cell that match the index is found
         }
-      });
-      goodToGo = true;
+      }
+      goodToGo = true; // End the loop
     } else {
       computerIndex = pickComputerIndex();
     }

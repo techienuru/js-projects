@@ -30,7 +30,6 @@ export const gameVariables = {
   ],
   scores: JSON.parse(localStorage.getItem("tttScores")) || {
     wins: 0,
-    losses: 0,
     ties: 0,
   },
 };
