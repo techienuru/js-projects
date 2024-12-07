@@ -81,6 +81,7 @@ export function restartGame() {
   gameVariables.gameState = ["", "", "", "", "", "", "", "", ""];
   cells.forEach((cell) => {
     cell.innerText = "";
+    cell.classList.remove("taken");
     cell.classList.remove("highlight");
   });
   gameVariables.isGameActive = true;
