@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Background Color Generator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container > button {
+        background-image: linear-gradient(
+          to right top,
+          #0a8754,
+          #00927c,
+          #009ba2,
+          #00a2c2,
+          #2ba6d9,
+          #5ca1e5,
+          #8a99e6,
+          #b48edd,
+          #d875c0,
+          #ef5b92,
+          #f14f5a,
+          #dd5815
+        );
+        padding: 10px;
+        outline: none;
+        border: none;
+        color: rgba(0, 0, 0, 0.767);
+        /* color: #651010; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" id="js-bg-changer">Change Background Color</button>
+    </div>
+    <script>
+      const bgChanger = document.querySelector("#js-bg-changer");
+      const body = document.querySelector("body");
+
+      function generateRandNo() {
+        return Math.floor(Math.random() * 16);
+      }
+
+      function generateHexCode() {
+        const colorRange = "0123456789ABCDEF";
+        let colorCode = "#";
+        while (colorCode.length < 7) {
+          const randNo = generateRandNo();
+          const colorRangePicked = colorRange.at(randNo);
+          colorCode += colorRangePicked;
+        }
+        return colorCode;
+      }
+
+      bgChanger.addEventListener("click", () => {
+        body.style.backgroundColor = generateHexCode();
+      });
+    </script>
+  </body>
+</html>

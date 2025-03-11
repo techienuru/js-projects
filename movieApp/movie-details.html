@@ -9,19 +9,13 @@
       href="./images/favicon.webp"
       type="image/x-icon"
     />
-    <title>CineTechNuru - Movie Database App</title>
+    <title>Movie Details - CineTechNuru</title>
     <!-- Font Awesome CDN link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <!-- Bootstrap 5 CDN link -->
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    /> -->
     <link href="../Helpers/Bootstrap/bootstrap.css" rel="stylesheet" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style.css" />
@@ -71,43 +65,33 @@
       </nav>
       <!-- End Of Navbar -->
 
-      <!-- Start Of Hero Section -->
-      <section class="hero-section">
-        <div class="container p-5 my-5">
-          <h3 class="hero-title text-center">
-            Explore Endless Movie Series
-            <span class="d-block">
-              Dive into Entertainment with
-              <span class="hero-brand">CineTechNuru</span>
-            </span>
-          </h3>
-          <p class="text-center">
-            Stream the latest movies and series, anytime, anywhere. Enjoy
-            high-quality entertainment with personalized recommendations at your
-            fingertips.
-          </p>
-          <div class="hero-cta d-flex justify-content-center mt-4">
-            <a href="#movies-row" class="btn">Start Watching Now</a>
+      <!-- Start Of Movie Details Inner Section -->
+      <section class="mvdetails-section">
+        <div class="container my-5">
+          <button
+            type="button"
+            class="b2movies btn btn-outline-warning mb-5"
+            id="b2movies"
+          >
+            Back to Movies
+          </button>
+          <div id="mv-details-wrapper">
+            <!-- Movies Details Wrapper -->
           </div>
         </div>
       </section>
-      <!-- End Of Hero Section -->
+      <!-- End Of Movie Details Inner Section -->
 
-      <!-- Start Of Movies Section -->
-      <section class="movies-section">
+      <!-- Start Of Movies You might like Section -->
+      <section class="suggested-movies-section">
         <div class="container mb-5">
-          <h3 class="movies-heading">Popular Shows</h3>
-          <p class="text-center">Online Streaming</p>
-          <div class="movies-filter">
-            <button class="btn active">Movies</button>
-            <button class="btn">TV Shows</button>
-          </div>
-          <div class="row gy-3" id="movies-row">
-            <!-- Popular Movies appear heare dynamically -->
+          <h3 class="suggested-movies-heading mb-5">Movies You Might Like</h3>
+          <div class="suggested-movies-row" id="suggested-movies-row">
+            <!-- Movies You might like appear heare dynamically -->
           </div>
         </div>
       </section>
-      <!-- End Of Movies Section -->
+      <!-- End Of Movies You might like Section -->
 
       <!-- Start Of Footer Section -->
       <footer class="mt-5">
@@ -147,13 +131,8 @@
       </footer>
       <!-- End Of Footer Section -->
     </div>
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script> -->
     <script src="../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
-    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/movie-details.js"></script>
   </body>
 </html>
