@@ -5,7 +5,7 @@ export function renderCurrentYear() {
 }
 
 export function hidePreLoader() {
-  document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("load", () => {
     document.querySelector("#pre-loader").style.display = "none";
   });
 }
