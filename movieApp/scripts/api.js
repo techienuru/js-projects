@@ -29,7 +29,7 @@ export async function showPopular() {
             <div class="card p-0">
             <div class="card-header p-0">
                 <a href="./movie-details.html?id=${movie.id}">
-                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Movie Image" class="img-fluid" />
+                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Movie Image" class="img-fluid" loading="lazy" />
                 </a>
             </div>
             <div class="card-body text-center p-2">
@@ -110,6 +110,7 @@ export async function showMovieDetails() {
             width="500"
             height="200"
             class="img-fluid"
+            loading="lazy"
         />
     </div>
     <div class="movie-details-wrapper my-5">
@@ -185,7 +186,7 @@ export async function showRecommMovies() {
             <div class="card p-0">
             <div class="card-header p-0">
                 <a href="./movie-details.html?id=${movie.id}">
-                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Movie Image" class="img-fluid" />
+                    <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="Movie Image" class="img-fluid" loading="lazy"/>
                 </a>
             </div>
             <div class="card-body text-center p-2">
