@@ -174,7 +174,6 @@ async function getRecommMovies() {
 }
 export async function showRecommMovies() {
   const moviesArr = await getRecommMovies();
-  console.log(moviesArr);
 
   const movieRow = document.querySelector("#suggested-movies-row");
 
@@ -182,7 +181,7 @@ export async function showRecommMovies() {
 
   moviesArr.forEach((movie) => {
     movieCardHTML += `
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="col-6 col-md-4 col-lg-3">
             <div class="card p-0">
             <div class="card-header p-0">
                 <a href="./movie-details.html?id=${movie.id}">
