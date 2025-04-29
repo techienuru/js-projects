@@ -1,7 +1,7 @@
 export let scores = JSON.parse(localStorage.getItem("scores")) || {
   wins: 0,
   losses: 0,
-  ties: 0,
+  ties: 0
 };
 
 let computerMove; // Declaring computer's pick variable
@@ -79,23 +79,25 @@ function calcScores(playerMove) {
 
 function renderResult(resultWrapperElement, playerMove, result) {
   let resultUI = `
-    <p class="lead">${result}</p>
-    <p class="lead">
-      You picked
-      <img
-        src="./images/${playerMove}-emoji.png"
-        alt="Your pick"
-        width="60"
-        height="60"
-      />. Computer picked
-      <img
-        src="./images/${computerMove}-emoji.png"
-        alt="Computer's pick"
-        width="60"
-        height="60"
-      />.
-    </p>
-    <p class="lead">Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}</p>
+    <div class="mb-3">  
+      <p class="lead">${result}</p>
+      <p class="lead">
+        You picked
+        <img
+          src="./images/${playerMove}-emoji.png"
+          alt="Your pick"
+          width="60"
+          height="60"
+        />. Computer picked
+        <img
+          src="./images/${computerMove}-emoji.png"
+          alt="Computer's pick"
+          width="60"
+          height="60"
+        />.
+      </p>
+      <p class="lead">Wins: ${scores.wins}, Losses: ${scores.losses}, Ties: ${scores.ties}</p>
+    </div>
   `;
   resultWrapperElement.innerHTML = resultUI;
 }

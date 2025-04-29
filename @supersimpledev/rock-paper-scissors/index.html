@@ -8,66 +8,54 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container py-5">
-      <h3 class="text-center text-white mb-4">Rules Of The Game</h3>
-      <table class="table table-dark">
-        <div class="table-responsive">
-          <thead>
-            <tr>
-              <th>S/N</th>
-              <th>First Pick</th>
-              <th>Second Pick</th>
-              <th class="text-info">Result (Who win)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Rock</td>
-              <td>Scissors</td>
-              <td class="text-info">Rock win</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Rock</td>
-              <td>Paper</td>
-              <td class="text-info">Paper win</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Paper</td>
-              <td>Scissors</td>
-              <td class="text-info">Scissors win</td>
-            </tr>
-            <tr>
-              <td colspan="4">
-                <span class="text-bold">NB: </span>You can also use keyboard to
-                play the game (R => Rock, P => Paper, S => Scissors)
-              </td>
-            </tr>
-          </tbody>
+    <main>
+      <div class="container text-white p-sm-5">
+        <h1 class="text-center my-5">Rock Paper Scissors Game</h1>
+        <div class="row mb-5 gap-3">
+          <button
+            type="button"
+            class="btn col game-choice-btn js-rock-btn"
+            title="Rock"
+          >
+            <p class="game-choice-text">Rock</p>
+            <img
+              src="./images/rock-emoji.png"
+              alt=""
+              class="img-fluid game-choice-img"
+            />
+          </button>
+          <button
+            type="button"
+            class="btn col game-choice-btn js-paper-btn"
+            title="Paper"
+          >
+            <p class="game-choice-text">Paper</p>
+            <img
+              src="./images/paper-emoji.png"
+              alt=""
+              class="img-fluid game-choice-img"
+            />
+          </button>
+          <button
+            type="button"
+            class="btn col game-choice-btn js-scissors-btn"
+            title="Scissors"
+          >
+            <p class="game-choice-text">Scissors</p>
+            <img
+              src="./images/scissors-emoji.png"
+              alt=""
+              class="img-fluid game-choice-img"
+            />
+          </button>
         </div>
-      </table>
-    </div>
-    <div class="container text-white p-5">
-      <h2 class="text-">Rock Paper Scissors Game</h2>
-      <div class="row mb-5 gap-3">
-        <button type="button" class="btn col js-rock-btn" title="Rock">
-          <img src="./images/rock-emoji.png" alt="" class="img-fluid" />
-        </button>
-        <button type="button" class="btn col js-paper-btn" title="Paper">
-          <img src="./images/paper-emoji.png" alt="" class="img-fluid" />
-        </button>
-        <button type="button" class="btn col js-scissors-btn" title="Scissors">
-          <img src="./images/scissors-emoji.png" alt="" class="img-fluid" />
-        </button>
-      </div>
-      <div class="result js-result-wrapper">
-        <!-- Result dynamically appear here from JS -->
-      </div>
-      <div class="row">
-        <div class="p-0 col-12 col-sm-8 col-lg-4 mx-auto">
-          <div class="d-flex justify-content-between btn-wrapper">
+        <div
+          class="result js-result-wrapper d-flex justify-content-center align-items-center"
+        >
+          <!-- Result dynamically appear here from JS -->
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="d-flex gap-5 btn-wrapper">
             <button
               type="button"
               class="p-2 btn btn-outline-danger js-reset-scores"
@@ -83,7 +71,48 @@
           </div>
         </div>
       </div>
-    </div>
+      <div class="container py-5">
+        <h3 class="text-center text-white mb-4">Rules Of the Game</h3>
+        <table class="table table-dark">
+          <div class="table-responsive">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>First Pick</th>
+                <th>Second Pick</th>
+                <th class="text-info">Result (Who win)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Rock</td>
+                <td>Scissors</td>
+                <td class="text-info">Rock win</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Rock</td>
+                <td>Paper</td>
+                <td class="text-info">Paper win</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Paper</td>
+                <td>Scissors</td>
+                <td class="text-info">Scissors win</td>
+              </tr>
+              <tr>
+                <td colspan="4">
+                  <span class="text-bold">NB: </span>You can also use keyboard
+                  to play the game (R => Rock, P => Paper, S => Scissors)
+                </td>
+              </tr>
+            </tbody>
+          </div>
+        </table>
+      </div>
+    </main>
     <script src="../../Helpers/Bootstrap/bootstrap.bundle.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>

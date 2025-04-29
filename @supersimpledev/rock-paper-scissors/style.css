@@ -1,20 +1,40 @@
 body {
   background-color: black;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.container:nth-child(2) > .row > button {
-  border: 1px solid white;
-  border-radius: 50%;
+h1 {
+  color: white;
+  text-align: center;
+  font-size: clamp(0.9375rem, 0.1339rem + 6.4286vw, 3.75rem);
 }
-.container:nth-child(2) > .row > button > img {
+.game-choice-btn {
+  position: relative;
+}
+.game-choice-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fffbbd;
+  text-shadow: 1px 1px 2px #000;
+  font-weight: bolder;
+  background-color: #1d1a05;
+  padding: 0.5rem 2rem;
+  font-size: clamp(0.025rem, -0.3107rem + 2.6857vw, 1.2rem);
+}
+@media all and (max-width: 750px) {
+  .game-choice-text {
+    padding: 0.2rem 1rem;
+  }
+}
+.game-choice-btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #eee;
+  transform: translateY(-10px);
+}
+.game-choice-btn:active {
+  background-color: #ccc;
+}
+.game-choice-img {
   padding: 15px;
-}
-@media all and (width <= 294px) {
-  .card-body > .row > .col {
-    padding: 15px;
-  }
-}
-@media all and (width <= 254px) {
-  .card-body > .row > .col {
-    padding: 12px;
-  }
 }
